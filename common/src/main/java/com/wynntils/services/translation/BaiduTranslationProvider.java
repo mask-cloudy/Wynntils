@@ -61,7 +61,7 @@ public class BaiduTranslationProvider extends CachingTranslationProvider {
                         JsonObject firstResult = transResult.get(0).getAsJsonObject();
                         if (firstResult.has("dst")) {
                             String translatedText = firstResult.get("dst").getAsString();
-                            List<String> translatedList = List.of(translatedText.split("\{NL\}"));
+                            List<String> translatedList = List.of(translatedText.split("\\{NL\\}"));
                             
                             // Cache the translation
                             saveTranslation(toLanguage, messageList, translatedList);

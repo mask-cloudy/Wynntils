@@ -68,14 +68,14 @@
       "to",
       "text"
     ],
-    "id": "apiMicrosoftTranslation",
-    "method": "post",
-    "url": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=%{to}",
+    "body": "[{\"text\":\"%{text}\"}]",
     "headers": {
       "Content-Type": "application/json",
       "Ocp-Apim-Subscription-Key": "YOUR_MICROSOFT_TRANSLATOR_KEY_HERE"
     },
-    "body": "[{\"text\":\"%{text}\"}]"
+    "id": "apiMicrosoftTranslation",
+    "method": "post",
+    "url": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=%{to}"
   },
   {
     "arguments": [
@@ -84,13 +84,13 @@
       "salt",
       "sign"
     ],
-    "id": "apiBaiduTranslation",
-    "method": "post",
-    "url": "https://fanyi-api.baidu.com/api/trans/vip/translate",
+    "body": "q=%{text}&from=auto&to=%{to}&appid=20250916002455435&salt=%{salt}&sign=%{sign}",
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "body": "q=%{text}&from=auto&to=%{to}&appid=20250916002455435&salt=%{salt}&sign=%{sign}"
+    "id": "apiBaiduTranslation",
+    "method": "post",
+    "url": "https://fanyi-api.baidu.com/api/trans/vip/translate"
   },
   {
     "arguments": [
