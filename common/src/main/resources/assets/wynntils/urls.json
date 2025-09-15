@@ -65,6 +65,35 @@
   },
   {
     "arguments": [
+      "to",
+      "text"
+    ],
+    "id": "apiMicrosoftTranslation",
+    "method": "post",
+    "url": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=%{to}",
+    "headers": {
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": "YOUR_MICROSOFT_TRANSLATOR_KEY_HERE"
+    },
+    "body": "[{\"text\":\"%{text}\"}]"
+  },
+  {
+    "arguments": [
+      "text",
+      "to",
+      "salt",
+      "sign"
+    ],
+    "id": "apiBaiduTranslation",
+    "method": "post",
+    "url": "https://fanyi-api.baidu.com/api/trans/vip/translate",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": "q=%{text}&from=auto&to=%{to}&appid=20250916002455435&salt=%{salt}&sign=%{sign}"
+  },
+  {
+    "arguments": [
       "name"
     ],
     "encoding": "wiki",
